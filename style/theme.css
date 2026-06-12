@@ -1,0 +1,34 @@
+
+/* AUTOMATICALLY GENERATED FROM config.json */
+:root {
+    --bg-color: #2A2B2D;
+    --text-color: #FFFFFF;
+    --light-text-color: #E0E0E0;
+    --accent-color: #4797FF; 
+    --muted-text: #B0B3B8;
+    --grid-color: #6C757D;
+}
+
+@font-face {
+    font-family: 'Akira';
+    src: url('fonts/akira.otf');
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('fonts/futura.ttc');
+}
+
+body {
+    font-family: 'Futura', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1 {
+    font-family: 'Akira', sans-serif;
+}
+
+h2 {
+    font-family: 'Akira', sans-serif;
+}

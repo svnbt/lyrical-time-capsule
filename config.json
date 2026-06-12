@@ -1,0 +1,23 @@
+{
+    "colors": {
+        "BG_COLOR": "#2A2B2D",
+        "TITLE_COLOR": "#FFFFFF",
+        "TEXT_COLOR": "#FFFFFF",
+        "LIGHT_TEXT_COLOR": "#E0E0E0",
+        "US_COLOR": "#4797FF",
+        "CH_COLOR": "#FF0000",
+        "GRID_COLOR": "#6C757D",
+        "ACCENT_COLOR": "#E9C46A",
+        "TOPIC_COLORS": {
+            "Love, Nostalgia and Memories": "#E63946",
+            "Partying, Empowerment and Flexing": "#E9C46A",
+            "Mental Health and Struggles": "#005EFF"
+        }
+    },
+    "fonts": {
+        "title_font_path": "fonts/akira.otf",
+        "title_font_name": "Akira",
+        "main_font_path": "fonts/futura.ttc",
+        "main_font_name": "Futura"
+    }
+}

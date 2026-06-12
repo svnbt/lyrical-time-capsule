@@ -1,0 +1,52 @@
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+header, section {
+    scroll-snap-align: start;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 25vh;
+    box-sizing: border-box;
+}
+
+header {
+    padding-top: 20vh;
+}
+
+.slide-container {
+    overflow: hidden;
+}
+
+.slide-text {
+    opacity: 0;
+    transform: translateX(-150px);
+    will-change: opacity, transform;
+}
+
+.slide-chart {
+    opacity: 0;
+    transform: translateX(-150px);
+    will-change: opacity, transform;
+}
+
+.slide-container.is-visible .slide-text {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-container.is-visible .slide-chart {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: 0.3s;
+}
+
+footer {
+    scroll-snap-align: end;
+    padding-bottom: 40px;
+}
