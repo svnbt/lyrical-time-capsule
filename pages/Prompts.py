@@ -13,23 +13,18 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 try:
-    # 1. HTML einlesen 
     with open("prompts.html", "r", encoding="utf-8") as f:
         html_content = f.read()
-        
-    # 2. CSS einlesen (Jetzt mit prompts.css!)
     with open("style/theme.css", "r", encoding="utf-8") as f:
         theme_css = f.read()
     with open("style/style.css", "r", encoding="utf-8") as f:
         style_css = f.read()
         
-    # Wir machen prompts.css optional, falls die Datei mal nicht da ist, crasht es nicht
     prompts_css = ""
     if os.path.exists("style/prompts.css"):
         with open("style/prompts.css", "r", encoding="utf-8") as f:
             prompts_css = f.read()
             
-    # OPTIONAL: Falls du die Akira Font auch auf der Prompts-Seite brauchst
     import base64
     def get_base64_of_bin_file(bin_file):
         with open(bin_file, 'rb') as f:
@@ -42,7 +37,6 @@ try:
         theme_css = theme_css.replace("url('fonts/akira.otf')", f"url('data:font/otf;base64,{b64_akira}')")
         theme_css = theme_css.replace("url(fonts/akira.otf)", f"url('data:font/otf;base64,{b64_akira}')")
 
-    # 3. Magie im Hintergrund: Robustes Ersetzen aller Link-Kombinationen!
     links_theme = ['<link rel="stylesheet" href="theme.css">', '<link rel="stylesheet" href="style/theme.css">']
     links_style = ['<link rel="stylesheet" href="style.css">', '<link rel="stylesheet" href="style/style.css">']
     links_prompts = ['<link rel="stylesheet" href="prompts.css">', '<link rel="stylesheet" href="style/prompts.css">']
@@ -55,10 +49,8 @@ try:
         for link in links_prompts:
             html_content = html_content.replace(link, f'<style>{prompts_css}</style>')
 
-    # Den "Zurück"-Button dynamisch auf die Streamlit-Hauptseite leiten
-    html_content = html_content.replace('href="article.html"', 'href="/" target="_top"')
+    html_content = html_content.replace('href="article.html"', 'href="/" target="_parent"')
 
-    # 4. Anzeigen
     components.html(html_content, height=900, scrolling=True)
 
 except FileNotFoundError as e:

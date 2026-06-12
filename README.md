@@ -85,9 +85,15 @@ pip install -r requirements.txt
 
 ### 2. Open the article
 
-There are two ways to view the final project. The method required by the project description is to use a local Streamlit server to provide the full web-app experience, while the fallback method allows you to view the raw HTML.
+There are three ways to view the final project. The easiest method is to view the hosted version online. The method required by the project description is to use a local Streamlit server to provide the full web-app experience, while the fallback method allows you to view the raw HTML.
 
-#### Option 1: Run the Streamlit App (Official Method)
+#### Option 1: View Online (Easiest)
+You can view the fully hosted version of the article directly in your browser at: 
+[https://lyrical-time-capsule.streamlit.app/](https://lyrical-time-capsule.streamlit.app/)
+
+> **⚠️ Note on the Online Version:** The "Prompt Log" page linked at the bottom of the main article occasionally has trouble routing in the cloud-hosted environment. To view the prompts page, please use Option 2 or Option 3 below as a fallback.
+
+#### Option 2: Run the Streamlit App Locally
 Ensure you have installed the requirements and activated your Python virtual environment. Then, run the following command in your terminal:
 
 ```bash
@@ -96,8 +102,8 @@ streamlit run app.py
 
 This will start a local server and automatically open the interactive scrollytelling article in your default web browser.
 
-##### Troubleshooting (Browser & Security Warnings)
-If the page does not load or your browser (especially Safari) blocks the connection, try another browser or manually ensure the URL in your address bar starts with https:// (e.g., https://127.0.0.1:8501).
+> **⚠️ Troubleshooting:** If the page does not load or your browser (especially Safari) blocks the connection, try another browser or manually ensure the URL in your address bar starts with https:// (e.g., https://127.0.0.1:8501).
+
 
 #### Option 2: Direct HTML (Backup)
 If you do not want to set up a Python environment or run a local server, you can simply open the article.html file directly in any modern web browser (e.g., by double-clicking it). The core article, text, and styling will work perfectly as a standalone webpage without Streamlit.
